@@ -3,4 +3,5 @@
     <File Path=".gitignore" />
     <File Path="README.md" />
   </Folder>
+  <Project Path="ZooSimulator.Api/ZooSimulator.Api.csproj" />
 </Solution>
