@@ -2,7 +2,7 @@
 {
     public class Animal
     {
-        private Animal(string name)
+        protected Animal(string name)
         {
             Name = name;
         }
