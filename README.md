@@ -13,6 +13,12 @@ I have chosen the Web API as it shows API usage and also allows for any front en
 
 For this exercise the user interface is a thin client over the API.
 
+Health rules are checked immediately after each hour's damage is applied.
+
+An elephant below 70% health cannot walk. If it is still below 70% after the following hour's damage, it dies. Feeding it back to 70% or above cancels that countdown.
+
+Dead animals are not damaged or fed, and stay in the zoo marked as terminated.
+
 ## Assumptions/Out of scope
 No database is used, so all data is held in memory and is not persistent. This could be a sensible enhancement in the future.
 
@@ -27,7 +33,9 @@ A single API project with folders was chosen over multiple projects to avoid ove
 ## Testing
 Unit tests are written with xUnit in the `ZooSimulator.Tests` project.
 
-Thought this would be a valued addition, it is good to write the unit tests as you write the code, this also helps with QA.
+Thought this would be a valued addition, this also helps with QA.
+
+Sometimes I use the logger for QA first or even the UI and add the tests later but may be better to write them as you code each section.
 
 Also it helps to test the code before building/seeing the reults in the UI.
 

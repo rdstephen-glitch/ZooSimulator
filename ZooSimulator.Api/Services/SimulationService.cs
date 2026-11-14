@@ -14,8 +14,10 @@
 
                 /*Check the time simulation & health degradation is working*/
                 logger.LogInformation(
-                    "Zoo time is now {Time}. First animal health: {Health:F2}%",
+                    "Zoo time is now {Time}. Alive: {Alive}/{Total}. First animal health: {Health:F2}%",
                     zoo.CurrentTime,
+                    zoo.Animals.Count(a => a.IsAlive),
+                    zoo.Animals.Count,
                     zoo.Animals[0].Health);
             }
         }
