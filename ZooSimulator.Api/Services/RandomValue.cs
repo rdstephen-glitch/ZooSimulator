@@ -1,6 +1,6 @@
 ﻿namespace ZooSimulator.Api.Services
 {
-    public class RandomSource : IRandomValue
+    public class RandomValue : IRandomValue
     {
         //Cater for damage and feeding
         public double ReturnRandomValue(double min, double max)

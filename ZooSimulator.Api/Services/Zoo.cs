@@ -11,9 +11,13 @@ namespace ZooSimulator.Api.Services
         private readonly IRandomValue _random;
         private readonly List<Animal> _animals = [];
 
-        public Zoo(IRandomValue random)
+        public IReadOnlyList<Animal> Animals => _animals;
+        public DateTimeOffset CurrentTime { get; private set; }
+
+        public Zoo(IRandomValue random, TimeProvider timeProvider)
         {
             _random = random;
+            CurrentTime = timeProvider.GetUtcNow();
 
             for (var i = 1; i <= AnimalsPerType; i++)
             {
@@ -23,14 +27,14 @@ namespace ZooSimulator.Api.Services
             }
         }
 
-        public IReadOnlyList<Animal> Animals => _animals;
-
-        public void HourlyTick()
+        public void SimulateTime()
         {
             foreach (var animal in _animals)
             {
                 animal.ReduceHealth(_random.ReturnRandomValue(MinReduceHealthPercent, MaxReduceHealthPercent));
             }
+
+            CurrentTime = CurrentTime.AddHours(1);
         }
     }
 }
