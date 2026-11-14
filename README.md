@@ -19,6 +19,8 @@ An elephant below 70% health cannot walk. If it is still below 70% after the fol
 
 Dead animals are not damaged or fed, and stay in the zoo marked as terminated.
 
+*Document Zoo End Points
+
 ## Assumptions/Out of scope
 No database is used, so all data is held in memory and is not persistent. This could be a sensible enhancement in the future.
 

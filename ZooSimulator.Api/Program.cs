@@ -1,3 +1,4 @@
+using ZooSimulator.Api.EndPoints;
 using ZooSimulator.Api.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,12 +10,6 @@ builder.Services.AddHostedService<SimulationService>();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World!");
-
-app.MapPost("/api/zoo/feed", (Zoo zoo) =>
-{
-    zoo.FeedAnimals();
-    return Results.NoContent();
-});
+app.MapZooEndpoints();
 
 app.Run();
