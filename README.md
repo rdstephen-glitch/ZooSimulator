@@ -24,5 +24,13 @@ No database is used, so all data is held in memory and is not persistent. This c
 ## Structure
 A single API project with folders was chosen over multiple projects to avoid over-engineering, keeping the solution quick to navigate, build and run.
 
+## Testing
+Unit tests are written with xUnit in the `ZooSimulator.Tests` project.
+
+The simulation relies on randomness and the passing of time, so thought beneficial to have some unit tests regarding this.
+
+## FE?
+TBC
+
 ## Running the solution
 TBC

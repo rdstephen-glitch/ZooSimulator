@@ -4,4 +4,5 @@
     <File Path="README.md" />
   </Folder>
   <Project Path="ZooSimulator.Api/ZooSimulator.Api.csproj" />
+  <Project Path="ZooSimulator.Tests/ZooSimulator.Tests.csproj" Id="2cada7b1-5ac9-4de4-80f8-c6bb33491497" />
 </Solution>
