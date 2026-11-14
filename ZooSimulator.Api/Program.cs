@@ -11,4 +11,10 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Hello World!");
 
+app.MapPost("/api/zoo/feed", (Zoo zoo) =>
+{
+    zoo.FeedAnimals();
+    return Results.NoContent();
+});
+
 app.Run();

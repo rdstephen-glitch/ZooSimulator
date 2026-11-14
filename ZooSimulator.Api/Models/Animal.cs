@@ -14,5 +14,11 @@
         {
             Health -= Health * (percent / 100);
         }
+
+        public void Feed(double percent)
+        {
+            Health = Math.Min(100, Health + Health * (percent / 100));
+        }
+
     }
 }

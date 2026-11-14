@@ -5,8 +5,12 @@ namespace ZooSimulator.Api.Services
     public class Zoo
     {
         private const int AnimalsPerType = 5;
+
         private const double MinReduceHealthPercent = 0;
         private const double MaxReduceHealthPercent = 20;
+
+        private const double MinFeedPercent = 10;
+        private const double MaxFeedPercent = 25;
 
         private readonly IRandomValue _random;
         private readonly List<Animal> _animals = [];
@@ -35,6 +39,26 @@ namespace ZooSimulator.Api.Services
             }
 
             CurrentTime = CurrentTime.AddHours(1);
+        }
+
+        public void FeedAnimals()
+        {
+            var monkeyRoll = _random.ReturnRandomValue(MinFeedPercent, MaxFeedPercent);
+            var giraffeRoll = _random.ReturnRandomValue(MinFeedPercent, MaxFeedPercent);
+            var elephantRoll = _random.ReturnRandomValue(MinFeedPercent, MaxFeedPercent);
+
+            foreach (var animal in _animals)
+            {
+                var roll = animal switch
+                {
+                    Monkey => monkeyRoll,
+                    Giraffe => giraffeRoll,
+                    Elephant => elephantRoll,
+                    _ => throw new NotImplementedException()
+                };
+
+                animal.Feed(roll);
+            }
         }
     }
 }
