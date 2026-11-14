@@ -27,7 +27,11 @@ A single API project with folders was chosen over multiple projects to avoid ove
 ## Testing
 Unit tests are written with xUnit in the `ZooSimulator.Tests` project.
 
-The simulation relies on randomness and the passing of time, so thought beneficial to have some unit tests regarding this.
+Thought this would be a valued addition, it is good to write the unit tests as you write the code, this also helps with QA
+
+To execute the tests, in Visual Studio got to the top navigation, select Test, Select Test Explorer, Click Run all Tests in View
+
+Confirm the tests have passed, if not then please investigate.
 
 ## FE?
 TBC
