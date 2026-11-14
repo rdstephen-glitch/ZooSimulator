@@ -21,5 +21,8 @@ No database is used, so all data is held in memory and is not persistent. This c
 - ASP.NET Core minimal APIs
 - Front End - TBC
 
+## Structure
+A single API project with folders was chosen over multiple projects to avoid over-engineering, keeping the solution quick to navigate, build and run.
+
 ## Running the solution
 TBC
