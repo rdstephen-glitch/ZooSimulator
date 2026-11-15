@@ -25,7 +25,7 @@ I chose the Web API as it shows API usage and allows any front end to be placed 
 ### Use of AI
 For transparency I used Claude for some parts of this exercise, as I know after my discussion with Matt that the company is proactively using AI.
 
-I used it mostly as a sounding board for my ideas and to help with repetitive code and unfamilar parts of the stack, especially the front end code. 
+I used it mostly as a sounding board for my ideas and to help with repetitive code and unfamiliar parts of the stack, especially the front end code. 
 
 I ran, debugged and committed everything myself and made the design decisions, such as Web API over a console or server-rendered app, minimal APIs,
 a single project organised by folders, and the extra features (reset, per-type feeding, random names, at-risk warning and game-over effect).
