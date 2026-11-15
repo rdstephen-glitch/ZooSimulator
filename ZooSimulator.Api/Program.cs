@@ -10,6 +10,8 @@ builder.Services.AddHostedService<SimulationService>();
 
 var app = builder.Build();
 
+app.UseDefaultFiles();
+app.UseStaticFiles();
 app.MapZooEndpoints();
 
 app.Run();

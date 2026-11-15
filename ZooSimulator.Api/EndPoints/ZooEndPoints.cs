@@ -10,6 +10,15 @@ namespace ZooSimulator.Api.EndPoints
 
             group.MapGet("/", (Zoo zoo) => zoo.GetStatus());
             group.MapPost("/feed", (Zoo zoo) => zoo.FeedAnimals());
+            group.MapPost("/reset", (Zoo zoo) =>
+            {
+                zoo.Reset();
+                return Results.NoContent();
+            });
+            group.MapPost("/feed/{type}", (string type, Zoo zoo) =>
+                zoo.FeedType(type) is { } result
+                    ? Results.Ok(result)
+                    : Results.NotFound());
 
             return app;
         }

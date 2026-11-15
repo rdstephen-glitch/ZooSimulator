@@ -5,4 +5,6 @@
     public record AnimalStatus(string Name, string Type, double Health, bool IsAlive, bool CanWalk);
 
     public record FeedResult(double MonkeyPercent, double GiraffePercent, double ElephantPercent);
+
+    public record TypeFeedResult(string Type, double Percent);
 }

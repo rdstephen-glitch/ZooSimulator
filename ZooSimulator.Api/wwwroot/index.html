@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Zoo Simulator</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+    <header class="topbar">
+        <h1>Zoo Simulator</h1>
+        <div class="clock">
+            <span class="clock-label">Current zoo time:</span>
+            <span id="sky" aria-hidden="true">☀️</span>
+            <span id="zoo-time">Loading…</span>
+        </div>
+        <div class="alive" id="alive-count"></div>
+        <button id="sound-toggle" type="button" aria-label="Sound effects">🔊</button>
+    </header>
+
+    <main>
+        <section class="feed-bar">
+            <button id="feed-button" type="button">🍽️ Feed all the animals</button>
+            <button id="reset-button" type="button" class="secondary">↺ Reset zoo</button>
+            <p id="feed-message" role="status"></p>
+        </section>
+
+        <p id="error" class="error" hidden>Unable to reach the zoo. Retrying…</p>
+        <p id="risk-banner" class="risk" role="status" hidden></p>
+
+        <div class="habitats">
+            <section class="habitat monkey" data-type="Monkey" data-threshold="30">
+                <h2>🐒 Monkeys</h2>
+                <p class="rule">Dies below 30% health</p>
+                <div class="cards"></div>
+                <button type="button" class="feed-type" data-type="Monkey">🍌 Feed monkeys</button>
+            </section>
+
+            <section class="habitat giraffe" data-type="Giraffe" data-threshold="50">
+                <h2>🦒 Giraffes</h2>
+                <p class="rule">Dies below 50% health</p>
+                <div class="cards"></div>
+                <button type="button" class="feed-type" data-type="Giraffe">🍃 Feed giraffes</button>
+            </section>
+
+            <section class="habitat elephant" data-type="Elephant" data-threshold="70">
+                <h2>🐘 Elephants</h2>
+                <p class="rule">Cannot walk below 70% health</p>
+                <div class="cards"></div>
+                <button type="button" class="feed-type" data-type="Elephant">🍎 Feed elephants</button>
+            </section>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
